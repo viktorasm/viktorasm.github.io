@@ -1,8 +1,8 @@
 # Site settings
-title: Viktoras Makauskas dev blog
+title: Viktoras Makauskas blog
 email: viktoras@neglostyti.com
 description: > # this means to ignore newlines until "baseurl:"
-  Should probably add some kind of description at some point
+  An experimental blog setup for now.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://viktorasm.github.io" # the base hostname & protocol for your site
 twitter_username: viktorasm

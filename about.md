@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I normally limit my online presence to [twitter](http://www.twitter.com/viktorasm) and forums (if you're meeting `uiron` on [cgtalk.com](http://www.cgtalk.com), [helifreak.com](http://www.helifreak.com) or somewhere else, that's probably me). I'm also an author and maintainer of projects [ngSkinTools](http://www.ngskintools.com) and [never-crashed.com](http://www.never-crashed.com).
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I've been having ideas for a few articles now and then, and somehow randomly decided to give Github pages a try. We'll see where this goes.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
