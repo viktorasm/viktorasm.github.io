@@ -32,15 +32,49 @@ Another big goal was to require as little alt-tabbing as possible; having to swi
 
 * Run Maya from Eclipse (more on that later);
 * Run tests from Eclipse;
-* Route all outputs to single console in IDE;
+* Route all outputs back to Eclipse;
+* Eliminate any need to switch to Maya window at all - be it reloading a plugin, setting some required options for debugging or inspecting a problem. 
 
 Ideally this would allow me to just sit in Eclipse and perform the whole development cycle in one tool.
 
 ## The setup in action
 
+So this is where I am now. It's not really a one-click solution yet, but comfortable enough for me not to worry at this point.
 
-*TODO: describe current setup in action*
+### Running tests
 
+The typical development session would start with running the whole set of tests. First, let's fire up Maya, there's a shortcut in IDE prepared for that; Maya quietly starts in the background, gets configured with all sorts of specific options just for this project, and starts listening for test launches.
+
+Then, I execute the whole test suite. After it completes, I get this:
+![Test result](/assets/maya-test/test-result.png)
+
+The console on the left is test execution script, which is mostly just shows test summary. The console on the right is Maya: it shows both C++ `cout`s and Python `print`s, and for each test being performed, the separator is put so I can see where one test ends and another begins, if any troubleshooting is needed.
+
+If any test fails, the output would similar to this, with a convenient hyperlink to exact place in the code, being another benefit of doing everything in one tool:
+![Test result](/assets/maya-test/test-result-fail.png)
+
+### Getting all tests together
+
+There's no obvious way of "run all tests that you find" from inside Maya, things like [Nose](http://pythontesting.net/framework/nose/nose-introduction/) don't quite work; my solution is to use a highly simplified version of Nose approach, by going through all of modules and finding any test class. I do it with a `testsAll.py` in root test package with this:
+
+{% highlight python %}
+for root, dirds, files in os.walk(os.path.dirname(__file__)):
+    root = root[len(packageRoot)+1:].replace(os.sep,".")
+    
+    for f in files:
+        if f in ["__init__.py","testsAll.py","testUtils.py","reloadPlugin.py"]:
+            continue
+        if f.endswith(".py"):
+            module = __import__(root+"."+f[:-3],fromlist=[root])
+            for _,c in inspect.getmembers(module, inspect.isclass):
+                if isTestsClass(c):
+                    decorateTestMethods(c)
+                    globals()[c.__name__.replace(".","_")] = c
+{% endhighlight %}  
+
+Basically, after imported, `testsAll` module will have imported all tests classes that it finds in subpackages. `decorateTestMethods` adds some additional behaviour like printing test name in the log before each test.
+
+Having this `testsAll` module means that I can use `unittest.TestLoader().loadTestsFromModule` to programmatically load all of my tests into one big suite and run it inside Maya, removing the need of command line tool for test discovery.
 
 
 ## Base set of tools
