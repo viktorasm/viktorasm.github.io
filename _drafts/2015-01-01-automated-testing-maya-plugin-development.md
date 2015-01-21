@@ -5,11 +5,6 @@ date:   2015-01-01 20:00:00
 categories: TDD Maya
 ---
 
-### TODO:
-* Include links to other TDD articles
-
-<hr/>
-
 Writing another article on automated testing might seem silly at first. TDD is exhaustively discussed already, and there's plenty of good material about it already, why another?
 
 I thought that instead of writing a tutorial, or a guide of some sort, I just want to share my story, and thought process of transitioning to TDD setup in [ngskintools.com](http://www.ngskintools.com) project.
@@ -18,37 +13,83 @@ I'll probably be skipping quite a few technical details on how this or that is i
 
 ## The problem
 
-My previous development workflow was a real mess:
+During the first couple of years or so, ngSkinTools development workflow was nothing short of a mess, and could be summarized as:
+ 
+<p class="graf--pullquote">I have some tests, but some things are easier to test by hand. I’m kind-of managing it this way.</p>
 
-* Ad-hock shell buttons in Maya to launch tests, reload plugin binary or python code, and various other utilities;
-* Various "useful" code snippets in script editor to run in Maya, for various things I would be working on at the moment, from adjusting python path, to setting up a test scene or launching a particular sequence of commands while I'm debugging something;
-* Not a lot would be automated, so coding/testing workflow would generally mean: code, build, alt-tab (or worse, relaunch maya if it crashed from previous run), load test scene, perform some actions in UI, observe result, repeat;
-* C++ plugin output went to Maya standard output, Python output went to Script Editor history; tracking "what's going on" during execution meant a lot of hit and miss;
-* Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to test this or that;
-* In the even of having to rebuild my development environment, preparing Maya for such workflow would require quite some manual fiddling around, getting all required paths and buttons setup again.  
+There would be ad-hock shell buttons in Maya to launch tests, reload plugin binary or python code, and various other utilities. Various "useful" code snippets would be kept in script editor to run inside Maya, for various things I would be working on at the moment, from adjusting python path, to setting up a test scene or launching a particular sequence of commands while I'm debugging something.
+
+Not a lot would be automated, so coding/testing workflow would generally mean: code, build, alt-tab (or worse, relaunch maya if it crashed from previous run), load test scene, perform some actions in UI, observe result, repeat.
+
+C++ plugin output went to Maya standard output, Python output went to Script Editor history; tracking "what's going on" during execution meant a lot of hit and miss.
+
+Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to test this or that. In the even of having to rebuild my development environment, preparing Maya for such workflow would require quite some manual fiddling around, getting all required paths and buttons setup again.  
 
 This does sound really amature, I know. I guess the reason I ended up in this kind-of state was mainly discouraging thoughts like:
 
-* "It's not really clear how you can run tests in Maya"
-* "I don't quite know how I will automate UI tests";
-* "Poor IDE support to select which tests to run";
-* "I already write tests though... just some things are easier to test by hand";
-* "I'm kind-of managing it this way";
+*"It's not really clear how you can run tests in Maya"*
+
+*"I don't quite know how I will automate UI tests"*
+
+*"Poor IDE support for such type of testing"*
+
+*"I already write tests though... just some things are easier to test by hand"*
+
+*"I'm kind-of managing it this way"*
 
 ## The goal
 The whole thing needed ... structure. A few things are obvious:
 
-* Setup the project to enable test-driven development: write tests for features under development, reproduce defects as tests, etc.; make sure the process of adding, writting and executing a test within Maya is **simple enough not to be discouraging**; 
-* Eliminate the need of "usefull snippets" and disposable code: wrap everything into tests;
-* Reduce the number of actions needed to rerun tests: ideally, a "one button click solution" to 
+* Setup the project to enable *comfortable* test-driven development: write tests for features under development, reproduce defects as tests, etc.; adding, writting and executing tests should be *simple* enough not to be discouraging; 
+* Eliminate the need of "usefull snippets" and disposable code: wrap utility code into tests, automate or rethink the use case in general;
+* Reduce the number of actions needed to rerun tests to a minimum. No manual managing of reloading plugin binaries or python code; all prerequisites should be handled by test runner automatically. 
 * Remove the need to switch to Maya for test execution: code, run tests and inspect results within IDE, just like for other type of development projects;
 * Unify debug outputs: ideally, single log for C++, Python, test outputs, so that the timeline of events is clearer; 
 
-The best automated test setup is one-click setup. You checkout source code on another computer, say "run tests", and it just works. This is how things work out of the box for a lot of project setups out there, but to get to this point for Maya plugin project will require quite some effort.
 
-The ice needed to be broken in some uncomfortable areas, like "how do I reliably run tests from IDE inside Maya and get the success/error feedback back", "how to write UI tests", "how do I switch between running a single test and whole suite", and so forth.
+But most importantly of all:
 
-## The setup in action
+<p class="graf--pullquote">adding, writting and executing tests should be simple enough not to be discouraging.</p>
+
+In other types of projects I'm working on (mostly web-related Java, Python, Node.js, etc), there's a strong support for this. You write a test and it's discovered and added to the test suite automatically. Your tests execute as part of a build.  Major frameworks make it easy to test code written against it. IDE's let you run the whole suite, or just the test you're currently working on at the moment. Supporting comfortable TDD is a focus of any decent platform out there.
+
+Can't say that about Maya. 
+
+From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instance `MArgList`. Except for cases where you can completely separate algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with a MString. 
+
+For Python side, you'd really wish there was a mechanism to trigger UI events, force processing of script jobs in the middle of your tests, etc. In other words, except for built-in Python tools, you're on your own.
+
+Not saying that the problems cannot be adressed; it's just that it's not trivial to overcome, and might be the reason why test-driven development is rarely ever discussed in Maya context.
+
+## The result
+
+Let's overview where I am now. It's not really a one-click solution yet, but comfortable enough for me not to worry at this point.
+
+Primary platform for development became Linux. It's been a few years I'm not using Windows for work, and really enjoying the benefits of a developer-friendly OS. Switching ngSkinTools dev setup over to Linux was always on my wishlist and I'm glad I finally got it out of the way. 
+
+I've migrated coding activities to single IDE, which is Eclipse. Both C++ and Python side of plugin is written there, and also all other types of things, like ngSkinTools update check server, or this very blog.
+
+Maya is setup to launch from within IDE. It's not just launching - the utility fully configures Maya to be ready for test execution. A special workspace where Maya is looking for shelves, scripts, startup options is created from scratch, so that the application configuration is *identical* each time the tests are executed. Console output is redirected to Eclipse.
+
+There are two major test suites to execute, both having a button to launch from IDE. 
+
+C++ test suite, based on [googletest](https://code.google.com/p/googletest/), is just a simple executable created as a part of the debug build. Internally it loads up Maya standalone, and executes tests against that container, so no "real" Maya involvement here. 
+
+Python test suite is actually executed within Maya. When you click a button in IDE, a command to run the whole test suite is sent to Maya, and when it completes, test output is shown back in IDE. 
+
+This all combines into a nice, handle-everything-in-one-tool setup:
+
+<div style="margin: 0 -100px; text-align: center;">
+<img src="/assets/maya-test/ide-overview.png" />
+</div>
+
+
+
+----
+----
+----
+
+## Pick up the usefull pieces from below sections and discard the rest
 
 So this is where I am now. It's not really a one-click solution yet, but comfortable enough for me not to worry at this point.
 
@@ -171,8 +212,8 @@ def testBuildInfluenceMappingEngine(self):
     # ...
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+<hr />
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+### TODO:
+* Include links to other TDD articles
+	* [Going TDD: first steps](http://www.cesarsaez.me/2014/08/going-tdd.html) by [Cesar Saez](http://www.cesarsaez.me/)
