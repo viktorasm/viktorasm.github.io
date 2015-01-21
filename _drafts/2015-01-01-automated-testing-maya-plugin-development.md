@@ -3,9 +3,10 @@ layout: post
 title:  "Automated testing and Maya plugin development"
 date:   2015-01-01 20:00:00
 categories: TDD Maya
+comments: true
 ---
 
-Writing another article on automated testing might seem silly at first. TDD is exhaustively discussed already, and there's plenty of good material about it already, why another?
+Writing another article on automated testing might seem silly at first. [TDD](http://martinfowler.com/bliki/TestDrivenDevelopment.html) is [exhaustively](http://martinfowler.com/articles/is-tdd-dead/) [discussed](http://www.cesarsaez.me/2014/08/going-tdd.html) already, and there's plenty of good material about it already, why another?
 
 I thought that instead of writing a tutorial, or a guide of some sort, I just want to share my story, and thought process of transitioning to TDD setup in [ngskintools.com](http://www.ngskintools.com) project.
 
@@ -23,7 +24,7 @@ Not a lot would be automated, so coding/testing workflow would generally mean: c
 
 C++ plugin output went to Maya standard output, Python output went to Script Editor history; tracking "what's going on" during execution meant a lot of hit and miss.
 
-Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to execute tests. In the even of having to rebuild my development environment, preparing Maya for such workflow would require special configuration, getting all required paths and buttons setup again.  
+Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to execute tests. In the event of having to rebuild my development environment, preparing Maya for such workflow would require remembering all this special configuration, getting required paths and buttons setup again.  
 
 I know, the whole situation does sound really amature. I guess the reason I ended up in this state was mainly discouraging thoughts like:
 
@@ -40,10 +41,10 @@ I know, the whole situation does sound really amature. I guess the reason I ende
 ## The goal
 The whole thing needed ... structure. A few things are obvious:
 
-* Setup the project to enable *comfortable* test-driven development: write tests for features under development, reproduce defects as tests, etc.; adding, writting and executing tests should be *simple* enough not to be discouraging; 
-* Eliminate the need of "usefull snippets" and disposable code: wrap utility code into tests, automate or rethink the use case in general;
+* Setup the project to enable *comfortable* test-driven development: write tests for new features, reproduce bugs as tests, etc.; adding, writing and executing tests should be *simple* enough not to be discouraging; 
+* Eliminate the need of "useful snippets" and disposable code: wrap utility checks into tests, automate or rethink the need to have such workarounds in first place;
 * Reduce the number of actions needed to rerun tests to a minimum. No manual managing of reloading plugin binaries or python code; all prerequisites should be handled by test runner automatically. 
-* Remove the need to switch to Maya for test execution: code, run tests and inspect results within IDE, just like for other type of development projects;
+* Remove the need to alt-tab to Maya for test execution: code, run tests and inspect results within IDE, just like for other type of development projects;
 * Unify debug outputs: ideally, single log for C++, Python, test outputs, so that the timeline of events is clearer; 
 
 
@@ -51,9 +52,9 @@ But most importantly of all:
 
 <p class="graf--pullquote">adding, writting and executing tests should be simple enough not to be discouraging.</p>
 
-In other types of projects I'm working on (mostly web-related Java, Python, Node.js, etc), there's a strong support for this. You write a test and it's discovered and added to the test suite automatically. Your tests execute as part of a build.  Major frameworks make it easy to test code written against it. IDE's let you run the whole suite, or just the test you're currently working on at the moment. Supporting comfortable TDD is a focus of any decent platform out there.
+In other types of projects I'm working on (mostly web-related Java, Python, Node.js, etc), there's a strong support for this. You write a test and it's discovered and added to the test suite automatically. Your tests execute as part of a build.  Major frameworks make it easy to test code written against it. IDE's let you run the whole suite, or just the test you're currently working on at the moment. Supporting comfortable TDD is among primary goals of any decent platform out there.
 
-Can't say that about Maya. 
+Couldn't say that about Maya. 
 
 From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instance `MArgList`. Except for cases where you can completely separate algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with an MString in it. 
 
@@ -83,121 +84,17 @@ This all combines into a nice, handle-everything-in-one-tool setup:
 <img src="/assets/maya-test/ide-overview.png" />
 </div>
 
-Let's have a closer look at a few different aspects of the setup.
+Let's have a closer look at a few different aspects of how I approach automated tests in Maya.
 
-### Launching Maya
+### Not really unit tests
 
-Describe how Maya launch is setup
+I'm not much of a unit test evangelist. I don't care about running my code purely against mocks, or that my whole test suite executes in a second. This especially true for projects like Maya plugin, where you really can't easily mock the rich ecosystem your code executes within.
 
-### Test types
+<p class="graf--pullquote">As long as tests reliably produce consistent behavior, and finish in a reasonable amount of time, it's fine by me.</p>
 
-Describe the reasoning behind choosing when to do unit tests and when integration tests;
+The main goal of a test for me is to touch as much functionality and to assert it against the expected behavior. 
 
-Explain the lack of mocking.
-
-----
-----
-----
-
-## Pick up the usefull pieces from below sections and discard the rest
-
-So this is where I am now. It's not really a one-click solution yet, but comfortable enough for me not to worry at this point.
-
-### Running tests
-
-The typical development session would start with running the whole set of tests. First, let's fire up Maya, there's a shortcut in IDE prepared for that; Maya quietly starts in the background, gets configured with all sorts of specific options just for this project, and starts listening for test launches.
-
-Then, I execute the whole test suite. After it completes, I get this:
-![Test result](/assets/maya-test/test-result.png)
-
-The console on the left is test execution script, which is mostly just shows test summary. The console on the right is Maya: it shows both C++ `cout`s and Python `print`s, and for each test being performed, the separator is put so I can see where one test ends and another begins, if any troubleshooting is needed.
-
-If any test fails, the output would similar to this, with a convenient hyperlink to exact place in the code, being another benefit of doing everything in one tool:
-![Test result](/assets/maya-test/test-result-fail.png)
-
-### Getting all tests together
-
-There's no obvious way of "run all tests that you find" from inside Maya, things like [Nose](http://pythontesting.net/framework/nose/nose-introduction/) don't quite work; my solution is to use a highly simplified version of Nose approach, by going through all of modules and finding any test class. I do it with a `testsAll.py` in root test package with this:
-
-{% highlight python %}
-for root, dirds, files in os.walk(os.path.dirname(__file__)):
-    root = root[len(packageRoot)+1:].replace(os.sep,".")
-    
-    for f in files:
-        if f in ["__init__.py","testsAll.py","testUtils.py","reloadPlugin.py"]:
-            continue
-        if f.endswith(".py"):
-            module = __import__(root+"."+f[:-3],fromlist=[root])
-            for _,c in inspect.getmembers(module, inspect.isclass):
-                if isTestsClass(c):
-                    decorateTestMethods(c)
-                    globals()[c.__name__.replace(".","_")] = c
-{% endhighlight %}  
-
-Basically, after imported, `testsAll` module will have imported all tests classes that it finds in subpackages. `decorateTestMethods` adds some additional behaviour like printing test name in the log before each test.
-
-Having this `testsAll` module means that I can use `unittest.TestLoader().loadTestsFromModule` to programmatically load all of my tests into one big suite and run it inside Maya, removing the need of command line tool for test discovery.
-
-
-## Base set of tools
-
-*TODO: don't feel like below is really relevant to the article* 
-
-* `Ubuntu`: Linux is really my platform of choice for development projects. It was a bit tricky to migrate Visual Studio setup of C++ projects and change debugging habbits, but I don't really look back anymore;
-* `Eclipse`: some hate it, some love it; I personally have a +10 year relationship with Eclipse going on and it's a great universal IDE, from Python and C++ to writting articles of this site;
-* `Git`: not a lot of alternatives for this great version control system;
-* `dccautomation`: a great library to remotely run things in Maya. This is the primary way of IDE <-> Maya communication.
-
-## Running Maya in known state 
-
-One of the things I realized at some point that it’s really beneficial to not use default Maya launch profile. When Maya starts crashing for no reason, and you checkout a know stable code, and it’s still does not work as before, one of the things might be that something changed in how Maya is launched, and you want to control that.
-
-![Maya environment - working copy and snapshot](/assets/maya-test/maya-env.jpeg)
-
-In my setup, I keep a snapshot of Maya home folder in version control, and create a fresh copy to actually use when running Maya. The reason to use a snapshot is that I want to version control all files in this folder (to always have a known and version controlled state of maya), but don’t want to spam version control with changes maya does to this folder after every launch.
-
-## Launching Maya
-Maya is setup to launch from Eclipse, I use a custom python script for that, which does the following:
-
-* Setup Maya home directory: recreate it from snashot, set up `MAYA_APP_DIR` to point to that location;
-* Sets python path to include python project paths; launcher script creates environment variable, which is later parsed by userSetup.py to be picked up by maya.
-* Depending on launch mode, runs Maya in “development” or “production” mode. In production mode, Maya is configured to use build-produced module file structure instead of “live” python sources. This is sort of a shortcut of “let’s install what we actually distribute and test if it works”.
-* Configures and starts dccautomation server: this listens for any launch requests from IDE. This again gets initiated in userSetup.py of this special Maya home folder I’m using.
-
-Main reasons to run Maya from IDE:
-
-* Version-controlled way to configure maya for development, with all benefits version control provides;
-* Maya output can be seen in Eclipse console; as both plugin debug messages and python test output is redirected to maya stdout, there’s a nice feedback right back to IDE as tests are being executed.
-
-## Sample tests
-
-Let's have a look at a few typical tests.
-
-First, there are some slim unit-tests that are barely Maya specific, so I just approach them like normal unit tests, trying to mock whatever I can, and test smallest possible bit.  
-
-This is for a class that is responsible for creating a logical index map for how influences map from right to left; as you can see, it straightforwardly describes how `InfluenceMapping` class should be used: create and configure the instance, add influence metadata, run `calculate()` and resulting "source->destination" map can be found in `.mapping` member.
-
-{% highlight python %}
-def testManualOverrides(self):
-    mapper = InfluenceMapping()
-    mapper.nameMatchRule.setPrefixes('L_','R_')
-    mapper.manualOverrides = {3:4, 4:4}
-    mapper.sourceInfluences.append(InfluenceInfo(path='L_a', logicalIndex=0))
-    mapper.sourceInfluences.append(InfluenceInfo(path='R_a', logicalIndex=1))
-    mapper.sourceInfluences.append(InfluenceInfo(path='L_aa', logicalIndex=3))
-    mapper.sourceInfluences.append(InfluenceInfo(path='R_aa', logicalIndex=4))
-    mapper.sourceInfluences.append(InfluenceInfo(path='a', logicalIndex=44))
-    
-    mapper.calculate()
-    self.assertEqual(mapper.mapping,{0:1, 1:0, 3:4, 4:4, 44:44})
-{% endhighlight %}
-
-
-
-It is completely viable to write a test like this upfront, without even having a 
-Being able to write tests like that requires to have some sort of 
-
-While a trivial tests that are completely disconnected
+My typical ngSkinTools test would look like this:
 
 {% highlight python %}
 def testBuildInfluenceMappingEngine(self):
@@ -222,8 +119,146 @@ def testBuildInfluenceMappingEngine(self):
     # ...
 {% endhighlight %}
 
-<hr />
+Not sure how self-explanatory it is for someone not familiar with my code, or ngSkinTools plugin but I am:
 
-### TODO:
-* Include links to other TDD articles
-	* [Going TDD: first steps](http://www.cesarsaez.me/2014/08/going-tdd.html) by [Cesar Saez](http://www.cesarsaez.me/)
+* opening a test scene (versioned along the rest of the code);
+* performing necessary scene setup - initializing skinning layers, adding default layer;
+* Then actual test: open UI window, set values into controls, then assert that those values correctly configure the internal engine.
+
+No mocks, no placeholders. Pretty much an actual operation a user would perform, just automated. We hit quite a few places of the code here: calls to C++ "backend", UI construction code, construction of `InfluenceMapping`.
+
+
+Of course, whenever possible, I try and have the more traditional unit-tests when possible. Here the internal behavior of the same `InfluenceMapping` being tested:
+
+{% highlight python %}
+def testManualOverrides(self):
+    mapper = InfluenceMapping()
+    mapper.nameMatchRule.setPrefixes('L_','R_')
+    mapper.manualOverrides = {3:4, 4:4}
+    mapper.sourceInfluences.append(InfluenceInfo(path='L_a', logicalIndex=0))
+    mapper.sourceInfluences.append(InfluenceInfo(path='R_a', logicalIndex=1))
+    mapper.sourceInfluences.append(InfluenceInfo(path='L_aa', logicalIndex=3))
+    mapper.sourceInfluences.append(InfluenceInfo(path='R_aa', logicalIndex=4))
+    mapper.sourceInfluences.append(InfluenceInfo(path='a', logicalIndex=44))
+    
+    mapper.calculate()
+    self.assertEqual(mapper.mapping,{0:1, 1:0, 3:4, 4:4, 44:44})
+{% endhighlight %}
+
+It's a test of an engine that is responsible for discovering relationships between right and left influences in a skin cluster. As you can see, it's designed to run as a standalone Python object, not relying on Maya API, and as such, I can just test it separately. Just showing that whenever possible, a "proper" test is even easier to setup.
+
+### Running Maya in known state 
+
+One of the things I realized at some point that it’s really beneficial to have a special Maya profile (that folder with `Maya.env`, `prefs`, `presets`, `scripts`) dedicated just for test execution. It would be a completely separate profile from the default one, and most importantly - recreated each time the Maya is started. This ensures that environment your tests execute in is the same each time, with same settings, same plugins enabled, etc. It's mostly to battle strange cases where one day for no reason your whole suite starts crashing, even the past builds marked as stable.
+
+<p class="graf--pullquote">You want to eliminate as much of unknowns as possible.</p>
+
+
+In my setup, I keep a snapshot of Maya home folder in version control along with other project files, and create a fresh copy to actually use when running Maya:
+
+<div style="text-align: center">
+<img src="/assets/maya-test/maya-env.jpeg" alt="Maya environment - working copy and snapshot" title="Maya environment - working copy and snapshot" />
+</div>
+
+### Launching Maya
+Maya is setup to launch from Eclipse, I use a custom Python script for that, which does the following:
+
+* Setup Maya home directory: recreate it from snashot, set up `MAYA_APP_DIR` to point to that location;
+* Sets python path to include python project paths; launcher script creates environment variable, which is later parsed by userSetup.py to be picked up by maya.
+* Depending on launch mode, runs Maya in “development” or “production” mode. In production mode, Maya is configured to use Maya module that is produced by production build, including both binary and python sources. This is sort of a shortcut to action of “let’s install what we actually distribute to users and see if it works”.
+* Configures and starts dccautomation server: this listens for any launch requests from IDE. This again gets initiated in userSetup.py of this special Maya home folder I’m using.
+
+The benefits of actually running Maya from IDE were discussed above.
+
+### Getting all tests together
+
+Creating a test suite in python from all tests available in your project is a little bit tricky, and best used from command line. There's also things like [Nose](http://pythontesting.net/framework/nose/nose-introduction/), but I decided not to use it either. I did not need all the magic Nose provides, and instead, I wanted another kind of  magic. Not sure if it explains things well enough:)
+
+In the root of tests package, I have a `testsAll.py`, which imports all the submodules, looking for test classes, and for each found test class, decorates test methods to print a separator. It looks like this:
+ 
+{% highlight python %}
+
+packageRoot = os.path.dirname(os.path.dirname(__file__))
+
+def isTestsClass(c):
+    '''
+    it's a test class if it inherits test case and has at least one test*() method
+    '''
+    if not issubclass(c, unittest.TestCase):
+        return False
+    
+    for method,_ in inspect.getmembers(c, inspect.ismethod):
+        if method.startswith("test"):
+            return True
+    
+    return False;
+
+def decorateTestMethods(c):
+    
+    for methodName,method in list(inspect.getmembers(c, inspect.ismethod))[:]:
+        if not methodName.startswith("test"):
+            continue
+
+        def decorate(method):
+            m = method
+            def decorated(*args,**kwargs):
+                splitter = "-- TEST: "+m.im_class.__name__+"."+m.__name__
+                splitter += '-'*(80-len(splitter))+"\n"
+                sys.__stdout__.write(splitter)        
+                return m(*args,**kwargs);
+            return decorated
+        
+        setattr(c, methodName, decorate(method))
+        
+for root, dirds, files in os.walk(os.path.dirname(__file__)):
+    root = root[len(packageRoot)+1:].replace(os.sep,".")
+    
+    for f in files:
+        if f in ["__init__.py","testsAll.py","testUtils.py","reloadPlugin.py"]:
+            continue
+        if f.endswith(".py"):
+            module = __import__(root+"."+f[:-3],fromlist=[root])
+            for _,c in inspect.getmembers(module, inspect.isclass):
+                if isTestsClass(c):
+                    decorateTestMethods(c)
+                    globals()[c.__name__.replace(".","_")] = c
+{% endhighlight %}  
+
+Having this `testsAll` module means that I can use `unittest.TestLoader().loadTestsFromModule` to programmatically load all of my tests into one big suite. The output would look something like this:
+
+<pre>
+<code>mapping |joint4|joint5|joint6 to |joint4|joint5|joint6|joint7|joint8
+initializing vertex transfer
+creating layers
+-- TEST: InitTransferWindowTest.testOpen----------------------------------------
+checking skin cluster availability
+reading vertices
+-- TEST: InitTransferWindowTest.testTransferBuildInfluenceMappingEngine---------
+checking skin cluster availability
+reading vertices
+-- TEST: LayerDataTest.testInfluenceList----------------------------------------
+-- TEST: LoggingTest.testCreateLogger-------------------------------------------
+[ngSkinTools INFO 23:05:55] something's up
+-- TEST: LoggingTest.testEnabledFor---------------------------------------------
+-- TEST: LoggingTest.testLogMethods---------------------------------------------
+[ngSkinTools INFO 23:05:55] info
+[ngSkinTools DEBUG 23:05:55] debug
+[ngSkinTools WARNING 23:05:55] warning
+[ngSkinTools ERROR 23:05:55] error
+-- TEST: MainWindowTest.testOpenClose-------------------------------------------
+-- TEST: MainWindowTest.testOpenWithInvalidOptions------------------------------
+-- TEST: MeshDataExporterTest.testExportData------------------------------------
+-- TEST: MllInterfaceTest.testAccess--------------------------------------------
+opening maya file..
+init layers..
+get mask..
+get layers..
+done.</code>
+</pre>
+
+## Summary
+
+Setting up automated tests on Maya is no small time investment. However, once in place, it's really rewarding. It's much easier to keep the pace at which the project is evolving and make sure you're not breaking already implemented things. You can refactor confidently. Your tests even serve as documentation of how your production code can/should be used.
+
+It's also worth noting that the most painful thing is add tests retrospectively for already existing features, so if you've got this new project going and still not sure if you need automated tests for it - you probably do!
+
