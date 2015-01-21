@@ -56,7 +56,7 @@ In other types of projects I'm working on (mostly web-related Java, Python, Node
 
 Couldn't say that about Maya. 
 
-From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instance `MArgList`. Except for cases where you can completely separate algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with an MString in it. 
+From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instantiate `MArgList`. Except for cases where you can completely separate the algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with an MString in it. 
 
 For Python side, you'd really wish there was a mechanism to trigger UI events, force processing of script jobs in the middle of your tests, etc. In other words, except for built-in Python tools, you're on your own.
 
