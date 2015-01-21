@@ -1,33 +1,18 @@
-.info {
-    background-color: #E4FFDE;
-    background-image: linear-gradient(to bottom, #E4FFDE 0%, #E4FFDE 100%);
-    padding: 10pt;
-    font-size: 1.5em;
-    font-style: italic;
-}
-
-.admonition {
-    border-radius: 10px;
-    border-style: dotted;
-    border-width: thin;
-    border-color: #DCDCDC;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
 .graf--pullquote {
     line-height: 1.2;
     text-align: center;
     font-size: 32px;
-    margin: 48px -160px;
+	    margin: 48px -160px;
+    @include media-query(1000px) {
+	    margin: 48px 0;
+	    transition: margin 100ms ease 0s;
+    }
     border: medium none;
     padding: 0px;
     font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
     letter-spacing: 0.01rem;
     font-weight: 400;
     font-style: italic;
-    transition: margin 100ms ease 0s;
 }
 
 

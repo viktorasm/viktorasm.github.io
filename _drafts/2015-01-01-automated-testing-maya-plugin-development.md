@@ -23,15 +23,15 @@ Not a lot would be automated, so coding/testing workflow would generally mean: c
 
 C++ plugin output went to Maya standard output, Python output went to Script Editor history; tracking "what's going on" during execution meant a lot of hit and miss.
 
-Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to test this or that. In the even of having to rebuild my development environment, preparing Maya for such workflow would require quite some manual fiddling around, getting all required paths and buttons setup again.  
+Putting project aside and getting back to it after a couple of months would require quite a lot of fiddling around to get things to build again, run stuff in debug mode, figure out how to execute tests. In the even of having to rebuild my development environment, preparing Maya for such workflow would require special configuration, getting all required paths and buttons setup again.  
 
-This does sound really amature, I know. I guess the reason I ended up in this kind-of state was mainly discouraging thoughts like:
+I know, the whole situation does sound really amature. I guess the reason I ended up in this state was mainly discouraging thoughts like:
 
 *"It's not really clear how you can run tests in Maya"*
 
 *"I don't quite know how I will automate UI tests"*
 
-*"Poor IDE support for such type of testing"*
+*"I don't have IDE/tools support for such type of testing"*
 
 *"I already write tests though... just some things are easier to test by hand"*
 
@@ -55,7 +55,7 @@ In other types of projects I'm working on (mostly web-related Java, Python, Node
 
 Can't say that about Maya. 
 
-From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instance `MArgList`. Except for cases where you can completely separate algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with a MString. 
+From C++ API side, you can't mock much; the way you have to use API binds you to it. A good example would be `MPxCommand.doIt(const MArgList& args)`; you can't test the method because there's no way to instance `MArgList`. Except for cases where you can completely separate algorithm from Maya API, you'll need to have Maya running, either in it's normal form or as standalone library. Even for something as simple as using a data structure with an MString in it. 
 
 For Python side, you'd really wish there was a mechanism to trigger UI events, force processing of script jobs in the middle of your tests, etc. In other words, except for built-in Python tools, you're on your own.
 
@@ -83,7 +83,17 @@ This all combines into a nice, handle-everything-in-one-tool setup:
 <img src="/assets/maya-test/ide-overview.png" />
 </div>
 
+Let's have a closer look at a few different aspects of the setup.
 
+### Launching Maya
+
+Describe how Maya launch is setup
+
+### Test types
+
+Describe the reasoning behind choosing when to do unit tests and when integration tests;
+
+Explain the lack of mocking.
 
 ----
 ----
