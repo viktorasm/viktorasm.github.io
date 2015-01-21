@@ -256,6 +256,10 @@ get layers..
 done.</code>
 </pre>
 
+## And it's probably not the whole story
+
+.. But the whole article ended up being bigger than initially anticipated. I'm open for discussion in the comments, or maybe a followup article, if there's an audience for this type of thing. We'll see.
+
 ## Summary
 
 Setting up automated tests on Maya is no small time investment. However, once in place, it's really rewarding. It's much easier to keep the pace at which the project is evolving and make sure you're not breaking already implemented things. You can refactor confidently. Your tests even serve as documentation of how your production code can/should be used.
