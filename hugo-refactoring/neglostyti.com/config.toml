@@ -1,0 +1,23 @@
+baseurl = "http://www.neglostyti.com/"
+languageCode = "en-us"
+title = "neglostyti.com"
+theme = "hyde-master"
+
+[params]
+author = "Viktoras Makauskas"
+description = "Viktoras Makauskas"
+authorimage = "uiron.jpg"
+dateformat = "Jan 2, 2006"
+layoutReverse = true
+
+
+[[menu.main]]
+    name = "posts"
+    identifier = "posts"
+    weight = 100
+    url = "/"
+[[menu.main]]
+    name = "about"
+    identifier = "about"
+    weight = 200
+    url = "/about/"

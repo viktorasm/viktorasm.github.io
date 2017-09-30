@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a402aa9-7d6b-4241-839a-1d057c2e643b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hugo-refactoring/bin/hugo.exe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/config.toml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/ngskintools-build-setup-rework.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/about/list.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/about.md" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/about/_index.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maya-test/ide-overview.png" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development/ide-overview.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maya-test/maya-env.jpeg" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development/maya-env.jpeg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maya-test/test-result-fail.png" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development/test-result-fail.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/maya-test/test-result.png" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development/test-result.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/uiron.jpg" afterPath="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/about/uiron.jpg" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="automated-testing-maya-plugin-development.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="425">
+                <caret line="17" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ngskintools-build-setup-rework.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/ngskintools-build-setup-rework.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="153">
+                <caret line="8" column="166" lean-forward="false" selection-start-line="8" selection-start-column="166" selection-end-line="8" selection-end-column="166" />
+                <folding>
+                  <marker date="1506809955799" expanded="true" signature="1224:2174" ph="..." />
+                  <marker date="1506809955799" expanded="true" signature="1367:2174" ph="..." />
+                  <marker date="1506809955799" expanded="true" signature="2305:2537" ph="..." />
+                  <marker date="1506809955799" expanded="true" signature="2389:2469" ph="..." />
+                  <marker date="1506809955799" expanded="true" signature="2600:3256" ph="..." />
+                  <marker date="1506809955799" expanded="true" signature="2697:3246" ph="..." />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.toml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/config.toml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hyde.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/static/css/hyde.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_index.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/about/_index.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="136">
+                <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>assets</find>
+      <find>figure</find>
+      <find>png</find>
+      <find>jpeg</find>
+      <find>highlight</find>
+      <find>date</find>
+      <find>categories</find>
+      <find>ide-overview</find>
+      <find>relaunch</find>
+      <find>ide-</find>
+      <find>!</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/layouts/_default/single.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/exampleSite/config.toml" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/avatar.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/index.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/content.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/articles/automated-testing-maya-plugin-development.md" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/header.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-nuo-master/index.js" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/layouts/partials/site-header.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/index.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/partials/sidebar.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/_default/list.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/about/baseof.html" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/about/_index.md" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/static/css/hyde.css" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/config.toml" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development.md" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/ngSkinTools build setup rework.md" />
+        <option value="$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/ngskintools-build-setup-rework.md" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1434" />
+    <option name="height" value="1177" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-refactoring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-refactoring" type="462c0819:PsiDirectoryNode" />
+              <item name="neglostyti.com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-refactoring" type="462c0819:PsiDirectoryNode" />
+              <item name="neglostyti.com" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-refactoring" type="462c0819:PsiDirectoryNode" />
+              <item name="neglostyti.com" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="viktorasm.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="viktorasm.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="hugo-refactoring" type="462c0819:PsiDirectoryNode" />
+              <item name="neglostyti.com" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="post" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\themes\hyde-master\layouts\about" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\themes" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\bin" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\posts" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\content\post" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\content\about" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\content" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\static\img" />
+      <recent name="C:\Users\uiron\projects\viktorasm.github.io\hugo-refactoring\neglostyti.com\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a402aa9-7d6b-4241-839a-1d057c2e643b" name="Default" comment="" />
+      <created>1506612457985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1506612457985</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="105" lean-forward="false" selection-start-line="10" selection-start-column="105" selection-end-line="10" selection-end-column="105" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="510">
+            <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="510">
+            <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/layouts/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/static/.gitkeep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="19" lean-forward="false" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/archetypes/default.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/content/about/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/content/post/creating-a-new-theme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="119">
+            <caret line="7" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/layouts/_default/single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-theme-cactus-plus-master/exampleSite/content/post/goisforlovers.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/avatar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="152" lean-forward="false" selection-start-line="1" selection-start-column="152" selection-end-line="1" selection-end-column="152" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/li.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/exampleSite/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/main_menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-goa-master/layouts/partials/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-nuo-master/rollup.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-nuo-master/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hugo-nuo-master/static/js/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/src/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/layouts/_default/baseof.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/layouts/partials/site-header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/layouts/post/single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/gohugo-theme-ananke-master/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="901">
+            <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+            <folding>
+              <marker date="1504814831000" expanded="true" signature="1532:1597" ph="..." />
+              <marker date="1504814831000" expanded="true" signature="1573:1590" ph="..." />
+              <marker date="1504814831000" expanded="true" signature="1646:1696" ph="..." />
+              <marker date="1504814831000" expanded="true" signature="1672:1689" ph="..." />
+              <marker date="1504814831000" expanded="true" signature="2352:2358" ph="hyde" />
+              <marker date="1504814831000" expanded="true" signature="2360:2397" ph="params: &lt;1 key&gt;" />
+              <marker date="1504814831000" expanded="true" signature="2382:2397" ph="theme-base-09" />
+              <marker date="1504814831000" expanded="true" signature="2967:2973" ph="hyde" />
+              <marker date="1504814831000" expanded="true" signature="2975:3004" ph="params: &lt;1 key&gt;" />
+              <marker date="1504814831000" expanded="true" signature="3000:3004" ph="true" />
+              <marker date="1504814831000" expanded="true" signature="3245:3250" ph="spf13" />
+              <marker date="1504814831000" expanded="true" signature="3594:3612" ph="Your tracking code" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/404.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/partials/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/_default/single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/_default/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/about/single.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/_default/baseof.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/about/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/layouts/partials/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/theme.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/about/_index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/themes/hyde-master/static/css/hyde.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="82" column="14" lean-forward="false" selection-start-line="82" selection-start-column="14" selection-end-line="82" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/config.toml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/automated-testing-maya-plugin-development.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="425">
+            <caret line="17" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hugo-refactoring/neglostyti.com/content/post/ngskintools-build-setup-rework.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="153">
+            <caret line="8" column="166" lean-forward="false" selection-start-line="8" selection-start-column="166" selection-end-line="8" selection-end-column="166" />
+            <folding>
+              <marker date="1506809955799" expanded="true" signature="1224:2174" ph="..." />
+              <marker date="1506809955799" expanded="true" signature="1367:2174" ph="..." />
+              <marker date="1506809955799" expanded="true" signature="2305:2537" ph="..." />
+              <marker date="1506809955799" expanded="true" signature="2389:2469" ph="..." />
+              <marker date="1506809955799" expanded="true" signature="2600:3256" ph="..." />
+              <marker date="1506809955799" expanded="true" signature="2697:3246" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
